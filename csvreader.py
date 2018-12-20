@@ -32,7 +32,7 @@ class CSVReader(AbscractReader):
                 print(y)
         return x,y
 
-print(csv.__file__)
-csv = CSVReader()
-csv.read('points_sheet.csv')
+# print(csv.__file__)
+# csv = CSVReader()
+# csv.read('points_sheet.csv')
 

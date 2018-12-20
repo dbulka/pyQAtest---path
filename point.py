@@ -1,11 +1,11 @@
-
+from reader_factory import ReaderFactory
 
 class Point:
     """
     make point in coordinate axis
     """
 
-    def __init__(self,x,y):
+    def __init__(self, coordinates):
         """
         initialize point
         :param x: x of coordinate axis
@@ -16,3 +16,8 @@ class Point:
 
     def __str__(self):
         return '{} {}'.format(self.x,self.y)
+
+    def main(self):
+        reader = ReaderFactory()
+        coordinates = reader.get_reader('points_sheet.csv')
+        return coordinates

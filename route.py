@@ -1,7 +1,6 @@
 from point import Point
-from sheet import PointsSheet
 import math
-
+from interface import Interface
 
 class Route:
     """
@@ -11,17 +10,10 @@ class Route:
     def __init__(self):
         """initialize route"""
 
-    def make_sheet(self):
+    def make_sheet(self, coordinates):
         """get x,y value of point"""
-        self.x = points_sheet.x
-        self.y = points_sheet.y
-
-    def route_formula(self,xa,ya,xb,yb):
-        lenth = math.sqrt((point_a.x-point_b.x)**2+(point_a.y-point_b.y)**2)
-        route += lenth
-        print('lenth ',lenth)
-        print('route ',route)
-        return route
+        self.x = point.x
+        self.y = point.y
 
     def calcutate_formula(self):
         """formula for calculating"""
@@ -31,22 +23,24 @@ class Route:
             if i == 0:
                 point_a = Point(0,0)
                 point_b = Point(self.x[i],self.y[i])
-                route_formula(point_a.x, point_a.y, point_b.x, point_b.y)
+                route_formula(point_a, point_b)
             else:
                 point_a = Point(self.x[i-1],self.y[i-1])
                 point_b = Point(self.x[i],self.y[i])
-                route_formula(point_a.x, point_a.y, point_b.x, point_b.y)
-        print(route)
+                route_formula(point_a, point_b)
+        print(interface.route)
 
-    def main(self):
-        """calculating process"""
-        make_sheet()
-        calcutate_formula()
+    def route_formula(self,point_a, point_b):
+        self.lenth = math.sqrt((point_a.x-point_b.x)**2+(point_a.y-point_b.y)**2)
+        self.route += self.lenth
+        print(interface.lenth)
+        print(interface.route)
+        return route
 
-
-
+interface = Interface()
+point = Point()
 calc_route = Route()
-points_sheet = PointsSheet()
-calc_route.main()
+calc_route.make_sheet(point.main())
+calc_route.calcutate_formula()
 
 

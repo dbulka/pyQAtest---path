@@ -11,7 +11,7 @@ class ReaderFactory:
         '.csv':'CSVReader()'
         }
 
-    def get_symb(self, filename,symb):
+    def get_symb(self, filename, symb):
         """
         get required symbol ii file
         :param Filename: file's name
