@@ -2,13 +2,13 @@
 
 class AbscractReader:
     """
-    reader for all formats
+    reader
     """
 
-    def __init__(self):
-    """
-    initialize new reader
-    """
+    def read(self, *args, **kwargs):
+        """
+        read process
+        """
 
 
 
